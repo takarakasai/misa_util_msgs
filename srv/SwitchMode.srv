@@ -1,0 +1,13 @@
+# Generic mode-switch service shared across misa-brand nodes.
+#
+# Used by misa_bilateral for:
+#   - switch_control_mode : mode = "bilateral" | "command"
+#   - switch_servo_state  : mode = "ON" | "OFF"   (OFF = Software E-stop)
+#
+# Accepted strings are defined by each service's contract, not by this type.
+string mode
+---
+# True if the requested mode was accepted and the transition performed.
+bool success
+# Human-readable reason on failure / transition-not-allowed.
+string message
